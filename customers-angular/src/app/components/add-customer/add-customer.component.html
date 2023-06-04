@@ -1,0 +1,78 @@
+<div class="container-xl">
+    <div class="table-responsive">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row w-100 p-3">
+                    <div class="col">
+                        <h4><b>New Customer</b></h4>
+                    </div>
+                    <div class="col">
+                        <a href="#" routerLink="/customers" class="btn btn-success back"><i class='fas fa-arrow-circle-left'></i> &nbsp;Back</a>
+                    </div>
+                </div>
+            </div>
+            <form #customerForm="ngForm">
+                <div class="table-content">
+                    <div class="form-group m-25 row">
+                        <div class="col-sm-3">
+                            <label for="FirstName" class="p-t-b-10">First Name<span class="requiredStar">*</span></label>
+                        </div>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="firstName" required maxlength="255" [(ngModel)]="customer.first_name" name="firstName" #firstName="ngModel">
+                            <div *ngIf="firstName.errors && submitted" class="alert alert-danger validationError">
+                                <div [hidden]="!firstName.errors?.['required']">
+                                    First Name is required
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group m-25 row">
+                        <div class="col-sm-3">
+                            <label for="LastName" class="p-t-b-10">Last Name<span class="requiredStar">*</span></label>
+                        </div>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="lastName" required maxlength="255"
+                  [(ngModel)]="customer.last_name" name="LastName" #lastName="ngModel">
+                        <div *ngIf="lastName.errors && submitted" class="alert alert-danger validationError">
+                            <div [hidden]="!lastName.errors?.['required']">
+                                Last Name is required
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group m-25 row">
+                    <div class="col-sm-3">
+                        <label class="p-t-b-10">Address<span class="requiredStar">*</span></label>
+                    </div>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="address" required maxlength="255"
+                  [(ngModel)]="customer.address" name="Address" #address="ngModel">
+                        <div *ngIf="address.errors && submitted" class="alert alert-danger validationError">
+                            <div [hidden]="!address.errors?.['required']">
+                                Address is required
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group m-25 row">
+                    <div class="col-sm-3">
+                        <label class="p-t-b-10">Age<span class="requiredStar">*</span></label>
+                    </div>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="age" required maxlength="10"
+                        [(ngModel)]="customer.age" name="Age" #age="ngModel">
+                            <div *ngIf="age.errors && submitted" class="alert alert-danger validationError">
+                                <div [hidden]="!age.errors?.['required']">
+                                    Age is required
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-footer">
+                    <button class="btn btn-success" (click)="saveCustomer(customerForm.form.valid)">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

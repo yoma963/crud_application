@@ -1,0 +1,42 @@
+.container-xl {
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12) !important;
+    padding: 0;
+    
+    .table-responsive {
+        margin: 3rem 0;
+        .table-wrapper {
+            background: #fff;
+            padding: 1rem;
+            border-radius: 3px;
+            min-width: 1000px;
+            box-shadow: 0 1px 1px rgb(0 0 0 / 5%);
+
+            .table-title {
+                display: flex;
+                background: #64437d;
+                color: #fff;
+                margin-bottom: 2rem;
+                border-radius: 3px;
+                .btn {
+                    float: right;
+                    text-transform: uppercase;
+                    font-size: 1rem !important;
+                }
+            }
+            .table-content {
+                .center-align{
+                    text-align: center;
+                    align-items: center;
+                }
+                .delete {
+                    color: #f44336;
+                    margin-inline: 10px;
+                }
+                .edit {
+                    color: #ffc107;
+                    margin-inline: 10px;
+                }
+            }
+        }
+    }
+}
